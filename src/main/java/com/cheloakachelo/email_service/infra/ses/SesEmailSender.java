@@ -13,6 +13,7 @@ public class SesEmailSender implements EmailSenderGateway {
 
     private final AmazonSimpleEmailService amazonSimpleEmailService;
 
+    @Autowired
     public SesEmailSender(AmazonSimpleEmailService amazonSimpleEmailService){
         this.amazonSimpleEmailService = amazonSimpleEmailService;
     }
@@ -30,7 +31,7 @@ public class SesEmailSender implements EmailSenderGateway {
         try{
             this.amazonSimpleEmailService.sendEmail(request);
         } catch (AmazonServiceException e){
-            throw new EmailServiceException("Failure while sending email");
+            throw new EmailServiceException("Failure while sending email " + e.getErrorMessage());
         }
     }
 

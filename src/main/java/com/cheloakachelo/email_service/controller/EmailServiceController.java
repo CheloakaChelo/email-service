@@ -31,7 +31,7 @@ public class EmailServiceController {
             this.emailSenderService.sendEmail(request.to(), request.subject(), request.body());
             return ResponseEntity.ok("email sent succesfully");
         } catch (EmailServiceException e){
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error while sending email");
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("error while sending email " + e.getMessage());
         }
     }
 }
