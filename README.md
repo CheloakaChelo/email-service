@@ -30,7 +30,7 @@ Antes de começar, você precisará ter instalado em sua máquina:
 Clone o repositório:
 ```bash
 git clone [https://github.com/cheloakachelo/email-service.git]([https://github.com/cheloakachelo/email-service.git)
-cd email-dispatcher
+cd email-service
 ```
 
 ## Variáveis de Ambiente
